@@ -1,0 +1,227 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #022d19;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablet and smaller */
+@media (max-width: 1024px) {
+  /* Force single column on tablets */
+  .lg\:grid-cols-4,
+  .lg\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .lg\:col-span-3,
+  .lg\:col-span-2,
+  .lg\:col-span-1 {
+    grid-column: span 1 / span 1 !important;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Smaller calendar cells for mobile */
+  .min-h-24 {
+    min-height: 70px !important;
+  }
+  
+  .min-h-20 {
+    min-height: 60px !important;
+  }
+  
+  /* Compact padding */
+  .p-6 {
+    padding: 1rem !important;
+  }
+  
+  .p-4 {
+    padding: 0.75rem !important;
+  }
+  
+  /* Smaller text in calendar */
+  .grid.grid-cols-7 .text-xs {
+    font-size: 10px !important;
+  }
+  
+  /* Task chips more compact */
+  .space-y-0\.5 > div {
+    padding: 2px 4px !important;
+    font-size: 10px !important;
+  }
+  
+  /* Mobile navigation full width */
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  /* Stack form fields */
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Full width modals on mobile */
+  .max-w-md,
+  .max-w-2xl,
+  .max-w-3xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Mobile modal positioning */
+  .fixed.inset-0.flex.items-center.justify-center {
+    align-items: flex-end !important;
+  }
+  
+  /* Bottom sheet animation */
+  .bottom-sheet-enter {
+    transform: translateY(100%);
+  }
+  
+  .bottom-sheet-enter-active {
+    transform: translateY(0);
+    transition: transform 300ms ease-out;
+  }
+  
+  .bottom-sheet-exit {
+    transform: translateY(0);
+  }
+  
+  .bottom-sheet-exit-active {
+    transform: translateY(100%);
+    transition: transform 300ms ease-in;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  /* Even more compact */
+  .min-h-24,
+  .min-h-20 {
+    min-height: 50px !important;
+  }
+  
+  /* Very small text */
+  .text-3xl {
+    font-size: 1.5rem !important;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem !important;
+  }
+  
+  .text-xl {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Hide day names on very small screens */
+  .grid.grid-cols-7 > div:first-child .text-xs {
+    font-size: 8px !important;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  button,
+  a,
+  input[type="checkbox"],
+  input[type="radio"],
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove hover effects on touch devices */
+  button:hover,
+  a:hover {
+    opacity: 1 !important;
+  }
+  
+  /* Active state for touch feedback */
+  button:active,
+  a:active {
+    opacity: 0.7;
+  }
+}
+
+/* Print styles (keep existing) */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Hide mobile-specific elements when printing */
+  .lg\:hidden,
+  .md\:hidden {
+    display: none !important;
+  }
+}
+
+/* Landscape mobile fixes */
+@media (max-width: 896px) and (orientation: landscape) {
+  /* Reduce bottom sheet height in landscape */
+  .max-h-\[85vh\] {
+    max-height: 70vh !important;
+  }
+  
+  /* Smaller headers in landscape */
+  header {
+    padding: 0.5rem !important;
+  }
+}
